@@ -2,6 +2,10 @@ name: do backup every 2 a.m
 on:
   schedule:
     - cron: "0 2 * * *"
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 090f5943308f549cdcd1a2e2e9086a038ce899d4
 
 jobs:
   backup:
