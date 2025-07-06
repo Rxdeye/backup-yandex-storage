@@ -1,7 +1,7 @@
 name: do backup every 2 a.m
 on:
   schedule:
-    - cron 0 2 * * *
+    - cron: "0 2 * * *"
 
 jobs:
   backup:
