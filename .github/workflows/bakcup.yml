@@ -1,5 +1,7 @@
 name: do backup every 2 a.m
 on:
+  push:
+    breanches: [ main ]
   schedule:
     - cron: "0 2 * * *"
 
