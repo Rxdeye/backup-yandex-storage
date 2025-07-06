@@ -1,0 +1,25 @@
+name: do backup every 2 a.m
+on:
+  schedule:
+    - cron 0 2 * * *
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+
+      - uses: povetek/yandex-object-storage-action@v3
+        with:
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          bucket: ${{ secrets.BUCKET }}
+          path: build
+          clear: true 
+
+
+
+
+
+
