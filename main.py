@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 access_key_id = os.getenv("access_key_id")
 secret_key = os.getenv("secret_key")
-
+s3_bucket = os.getenv("s3_bucket")
 
 with open("backup_config.yaml") as stream:
     files = yaml.safe_load(stream)
@@ -19,7 +19,7 @@ with open("backup_config.yaml") as stream:
 backup_paths = files['backups']
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-S3_BUCKET = "bucket-yc-rxdeye"
+S3_BUCKET = s3_bucket
 
 
 all_backups = []
